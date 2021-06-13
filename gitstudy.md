@@ -1,3 +1,13 @@
+**[Git 大全](https://gitee.com/all-about-git)**
+
+**[欢迎光临 Learn Git Branching](https://oschina.gitee.io/learn-git-branching/)**
+
+**[IDEA中的Git操作，看这一篇就够了！](https://juejin.cn/post/6844903926576185358)**
+
+[使用IntelliJ IDEA 上传本地项目到GitHub](https://www.cnblogs.com/wk-missQ1/p/12524762.html)
+
+
+
 Git是一种分布式版本控制系统，可以高效地处理项目的版本管理，包括跨区域的多人协同开发，追踪和记录文件的历史记录，组织和保护源代码和文档，统计工作量，跟踪记录整个软件的开发过程。
 
 ## Git 的四个工作区域
@@ -71,13 +81,18 @@ git clone https://github.com/Liu821218213/CatchTheCat
 git status # 查看当前文件的状态
 git add . # 添加所有文件到 暂存区/提交列表，或者 git add ./*
 git commit -m '消息内容' # 提交暂存区中的内容到本地 仓库/head中
-git push origin master
+git push origin master  # git push -u origin master
 # 将改动的文件提交至远程的master分支下，master也可以换成其他分支，这样我们就可以在远程github网站看到改动的信息了
+（首次提交注意别遗漏`-u`指定默认主机）
 ```
 
 
 
-## Git操作
+[git push 命令](https://www.cnblogs.com/qianqiannian/p/6008140.html)
+
+
+
+## Git基础操作
 
 ### 1.远程已经存在项目
 
@@ -149,6 +164,28 @@ You've successfully authenticated 即为成功
 
 
 
+
+## Git 分支
+
+[git拉取远程分支到本地](https://blog.csdn.net/carfge/article/details/79691360)
+
+[git推送本地分支到远程](https://www.cnblogs.com/qyf404/p/git_push_local_branch_to_remote.html)
+
+```bash
+git branch  # 列出所有本地分支
+git branch -r  # 列出所有远程分支
+git branch -a  # 列出所有本地分支和远程分支
+
+git checkout [branch-name]  # 切换到指定分支
+git branch [branch-name]  # 创建分支
+git checkout -b [branch]  # 创建并切换分支
+
+git push origin branchtest:branchtest  # 推送本地的branchtest(冒号前面的)分支到远程origin的branchtest(冒号后面的)分支(没有会自动创建)
+git pull origin dev(远程分支名称)  # 把远程仓库建好的分支拉到本地
+git checkout -b branchtest2 origin/branchtest2  # 在本地创建分支branchtest2，并切换到该分支，该分支追踪的是远程origin的branchtest分支
+```
+
+**[git clone、git pull和git fetch的用法及区别](https://segmentfault.com/a/1190000017030384)**
 
 
 
