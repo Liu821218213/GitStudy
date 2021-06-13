@@ -53,10 +53,9 @@ Git是一种分布式版本控制系统，可以高效地处理项目的版本�
 ```bash
 git init # 创建.git初始化文件
 git remote add origin git@github.com:文件名.git
-# 将本地项目与远程项目关联起来，
+# 将本地项目与远程项目关联起来
+# 后面的 `git@github.com:文件名.git` 是github上仓库的“clone or download”按钮下SSH的那个地址，如下图所示
 ```
-
-后面的 `git@github.com:文件名.git` 是github上仓库的 “clone or download”按钮下的那个，如下图所示
 
 
 
@@ -64,7 +63,7 @@ git remote add origin git@github.com:文件名.git
 
 ```bash
 git clone https://github.com/Liu821218213/CatchTheCat
-# 克隆指定路径的文件到当前文件夹
+# 克隆指定https路径的文件到当前文件夹
 # 注意如果使用了代理，需要进行对应的代理设置，否则可能无法克隆，超时
 ```
 
@@ -110,11 +109,15 @@ git push origin master
 
 ## SSH
 
+### 使用SSH与HTTPS的区别
+
 github使用 https url 与使用 SSH url 的区别：
 
 https可以随意克隆github上的项目，而不管是谁的；而SSH则是你必须是你要克隆的项目的拥有者或管理员，且需要先添加 SSH key ，否则无法克隆。
 
 https url 在push的时候是需要验证用户名和密码的；而 SSH 在push的时候，是不需要输入用户名的，如果配置SSH key的时候设置了密码，则需要输入密码的，否则直接是不需要输入密码的。
+
+### 本地生成SSH
 
 ```bash
 首先 git Bash 执行如下命令
